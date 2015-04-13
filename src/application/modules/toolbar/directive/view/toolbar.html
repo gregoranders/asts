@@ -1,0 +1,16 @@
+<md-toolbar>
+  <div class="md-toolbar-tools" layout="row" layout-fill>
+    <h2>
+      <span>Toolbar</span>
+    </h2>
+    <div flex></div>
+    <md-select ng-model="vm.theme">
+      <md-select-label>Theme</md-select-label>
+      <md-option ng-value="theme" ng-repeat="theme in vm.themes">{{ theme }}</md-option>
+    </md-select>
+    <md-select ng-model="vm.language">
+      <md-select-label>Language</md-select-label>
+      <md-option ng-value="language" ng-repeat="language in vm.languages">{{ language }}</md-option>
+    </md-select>
+  </div>
+</md-toolbar>

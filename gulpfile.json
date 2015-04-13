@@ -1,0 +1,79 @@
+{
+  "build": {
+    "out": "build",
+    "application": {
+      "out": "build/application"
+    },
+    "e2e": {
+      "out": "build/e2e-test"
+    },
+    "vendor": {
+      "out": "build/vendor"
+    }
+  },
+  "source": {
+    "scss": "src/application/scss/*.scss",
+    "ts6": [
+      "src/application/*.ts",
+      "src/application/**/*.ts"
+    ],
+    "ts5": [
+      "src/application/library.d.ts",
+      "src/e2e-test/*.ts",
+      "src/e2e-test/**/*.ts"
+    ],
+    "js": [
+      "src/application/*.js",
+      "src/application/**/*.js"
+    ],
+    "templates": [
+      "src/application/*.html",
+      "src/application/**/*.html"
+    ],
+    "static": [
+      "src/index.html",
+      "src/favicon.ico",
+      "src/apple-touch-icon.png",
+      "src/browserconfig.xml",
+      "src/config.js",
+      "src/crossdomain.xml"
+    ],
+    "vendor": [
+      "src/vendor/*",
+      "src/vendor/**/*"
+    ]
+  },
+  "destination": {
+    "css": "build/css"
+  },
+  "watch": {
+    "source": "build",
+    "files": [
+      "index.html",
+      "application/*.html",
+      "application/**/*.html",
+      "application/*.js",
+      "application/**/*.js",
+      "application/*.json",
+      "application/**/*.json"
+    ]
+  },
+  "ts5": {
+    "declarationFiles": false,
+    "noExternalResolve": true,
+    "noImplicitAny": true,
+    "noLib": false,
+    "sortOutput": true,
+    "removeComments": true,
+    "target": "ES5"
+  },
+  "ts6": {
+    "declarationFiles": false,
+    "noExternalResolve": true,
+    "noImplicitAny": true,
+    "noLib": false,
+    "sortOutput": true,
+    "removeComments": true,
+    "target": "ES6"
+  }
+}

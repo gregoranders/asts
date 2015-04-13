@@ -1,0 +1,105 @@
+{
+  "title": "asts - the AngularJS and SystemJS using TypeScript Seed",
+  "name": "angular-system-typescript-seed",
+  "description": "angular-system-typescript-seed - the AngularJS and SystemJS using TypeScript Seed",
+  "version": "0.0.1",
+  "homepage": "https://github.com/gregoranders/angular-system-typescript-seed",
+  "author": {
+    "email": "gregor.anders@gmail.com",
+    "name": "Gregor Anders",
+    "url": "https://github.com/gregoranders"
+  },
+  "bugs": {
+    "url": "https://github.com/gregoranders/asts/issues"
+  },
+  "license": {
+    "type": "BSD-3-Clause",
+    "url": "https://github.com/gregoranders/asts/blob/master/LICENSE"
+  },
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gregoranders/asts.git"
+  },
+  "engines": {
+    "node": "~0.12.0",
+    "iojs": "~1.6.3"
+  },
+  "keywords": [
+    "angular",
+    "angularjs",
+    "systemjs",
+    "typescript",
+    "jasmine",
+    "gulp",
+    "karma",
+    "e2e",
+    "protractor",
+    "seed"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "browser-sync": "^2.6.1",
+    "gulp": "^3.8.11",
+    "gulp-karma": "^0.0.4",
+    "gulp-minify-css": "^1.0.0",
+    "gulp-sass": "^1.3.3",
+    "gulp-sourcemaps": "^1.5.0",
+    "gulp-typescript": "^2.6.0",
+    "jspm": "^0.15.3",
+    "merge2": "^0.3.4",
+    "through2": "^0.6.5",
+    "typescript": "1.5.0-alpha",
+    "gulp-protractor": "^1.0.0",
+    "istanbul": "^0.3.13",
+    "jasmine-core": "^2.2.0",
+    "coveralls": "^2.11.2",
+    "karma": "^0.12.31",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-chrome-launcher": "^0.1.7",
+    "karma-firefox-launcher": "^0.1.4",
+    "karma-junit-reporter": "^0.2.2",
+    "karma-jasmine": "^0.3.5",
+    "karma-systemjs": "git://github.com/gregoranders/karma-systemjs.git",
+    "karma-coverage-es6": "^0.2.7",
+    "karma-traceur-preprocessor": "^0.4.0",
+    "protractor": "^2.0.0",
+    "systemjs": "^0.16.7",
+    "systemjs-builder": "^0.10.4",
+    "es6-module-loader": "^0.16.5",
+    "traceur": "^0.0.88"
+  },
+  "scripts": {
+    "postinstall": "jspm install && jspm resolve --only github:angular/bower-angular@master && jspm resolve --only github:angular/bower-angular-animate@master && webdriver-manager update",
+    "coverall": "gulp default && gulp test:ci && cd build/ && mv test_out/*/lcov.info . && cat lcov.info | coveralls && cd ..",
+    "pretest": "gulp default",
+    "test": "gulp test"
+  },
+  "jspm": {
+    "directories": {
+      "baseURL": "src",
+      "packages": "src/vendor"
+    },
+    "dependencies": {
+      "angular": "github:angular/bower-angular@master",
+      "angular-animate": "github:angular/bower-angular-animate@master",
+      "angular-aria": "github:angular/bower-angular-aria@master",
+      "angular-cookies": "github:angular/bower-angular-cookies@master",
+      "angular-i18n": "github:angular/bower-angular-i18n@master",
+      "angular-material": "github:angular/bower-material@master",
+      "angular-messages": "github:angular/bower-angular-messages@master",
+      "angular-mocks": "github:angular/bower-angular-mocks@master",
+      "angular-resource": "github:angular/bower-angular-resource@master",
+      "angular-route": "github:angular/bower-angular-route@master",
+      "angular-sanitize": "github:angular/bower-angular-sanitize@master",
+      "angular-touch": "github:angular/bower-angular-touch@master",
+      "angular-translate": "github:angular-translate/bower-angular-translate@master",
+      "angular-translate-loader-static-files": "github:angular-translate/bower-angular-translate-loader-static-files@master",
+      "moment": "github:moment/moment@master"
+    },
+    "devDependencies": {
+      "traceur": "github:jmcriffey/bower-traceur@0.0.87",
+      "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.87"
+    }
+  }
+}
