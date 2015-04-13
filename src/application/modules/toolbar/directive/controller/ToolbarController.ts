@@ -57,7 +57,7 @@ export class ToolbarController extends BaseController {
 
     $scope.$watch('vm.theme', (newValue: any, oldValue: any): void => {
       if (newValue && oldValue && newValue !== oldValue) {
-        console.log(newValue);
+
       }
     });
   }
