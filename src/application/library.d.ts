@@ -78,6 +78,8 @@ declare module angular {
    */
   interface IScope<T extends IController<IScope<any>>> {
     vm: T;
+
+    $watch(expression: string, func: any): void;
   }
 
   /**

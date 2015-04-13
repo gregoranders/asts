@@ -13,9 +13,14 @@
         type="text/css">
   <link rel="stylesheet" href="vendor/github/angular/bower-material@master/angular-material.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    [ng-cloak] {
+      display: none;
+    }
+  </style>
   <base href="/">
 </head>
-<body class="md-default-theme">
+<body md-theme="{{ vm.theme }}" ng-cloak>
 
 <header>
   <toolbar-directive></toolbar-directive>

@@ -26,6 +26,10 @@
       "src/application/*.js",
       "src/application/**/*.js"
     ],
+    "json": [
+      "src/application/*.json",
+      "src/application/**/*.json"
+    ],
     "templates": [
       "src/application/*.html",
       "src/application/**/*.html"

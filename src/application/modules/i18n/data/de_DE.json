@@ -1,0 +1,15 @@
+{
+  "asts": {
+    "language": {
+      "language": "Sprache",
+      "english": "Englisch",
+      "german": "Deutsch"
+    },
+    "theme": {
+      "theme": "Farbthema",
+      "red": "Rot",
+      "green": "Gruen",
+      "blue": "Blau"
+    }
+  }
+}

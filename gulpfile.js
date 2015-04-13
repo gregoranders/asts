@@ -41,6 +41,12 @@ gulp.task('templates', function () {
     .pipe(reload({stream: true}));
 });
 
+gulp.task('json', function () {
+  return gulp.src(config.source.json)
+    .pipe(gulp.dest(config.build.application.out))
+    .pipe(reload({stream: true}));
+});
+
 gulp.task('static', function () {
   return gulp.src(config.source.static)
     .pipe(gulp.dest(config.build.out))
@@ -89,6 +95,7 @@ gulp.task('serve', function () {
   gulp.watch(config.source.ts5, ['transpile:e2e']);
   gulp.watch(config.source.templates, ['templates']);
   gulp.watch(config.source.static, ['static']);
+  gulp.watch(config.source.json, ['json']);
 
   gulp.watch(config.watch.files,
     {
@@ -97,7 +104,7 @@ gulp.task('serve', function () {
     reload);
 });
 
-gulp.task('default', ['sass', 'templates', 'static', 'vendor', 'transpile', 'transpile:e2e'], function () {
+gulp.task('default', ['sass', 'templates', 'json', 'static', 'vendor', 'transpile', 'transpile:e2e'], function () {
 });
 
 gulp.task('test', function () {
