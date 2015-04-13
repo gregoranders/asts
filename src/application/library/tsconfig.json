@@ -1,0 +1,37 @@
+{
+    "version": "1.5.0",
+    "compilerOptions": {
+        "target": "es6",
+        "declaration": false,
+        "noImplicitAny": true,
+        "removeComments": true,
+        "noLib": false
+    },
+    "filesGlob": [
+        "./**/*.ts",
+        "!./node_modules/**/*.ts"
+    ],
+    "files": [
+        "./BaseController.spec.ts",
+        "./BaseController.ts",
+        "./BaseDirective.spec.ts",
+        "./BaseDirective.ts",
+        "./BaseHttpService.spec.ts",
+        "./BaseHttpService.ts",
+        "./BaseModule.spec.ts",
+        "./BaseModule.ts",
+        "./BaseModuleConstant.spec.ts",
+        "./BaseModuleController.spec.ts",
+        "./BaseModuleCreateFactory.spec.ts",
+        "./BaseModuleDirective.spec.ts",
+        "./BaseModuleFactory.spec.ts",
+        "./BaseModuleProvider.spec.ts",
+        "./BaseModuleRouteConfiguration.spec.ts",
+        "./BaseModuleRouteConfiguration.ts",
+        "./BaseModuleService.spec.ts",
+        "./BaseModuleValue.spec.ts",
+        "./BaseService.spec.ts",
+        "./BaseService.ts",
+        "./Version.ts"
+    ]
+}

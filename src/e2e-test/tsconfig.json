@@ -1,0 +1,20 @@
+{
+    "version": "1.5.0",
+    "compilerOptions": {
+        "target": "es5",
+        "module": "amd",
+        "declaration": false,
+        "noImplicitAny": true,
+        "removeComments": true,
+        "noLib": false
+    },
+    "filesGlob": [
+        "./**/*.ts",
+        "!./node_modules/**/*.ts"
+    ],
+    "files": [
+        "./index.e2e.spec.ts",
+        "./modules/authentication/login.e2e.spec.ts",
+        "./modules/authentication/logout.e2e.spec.ts"
+    ]
+}

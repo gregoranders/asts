@@ -1,0 +1,22 @@
+{
+    "version": "1.5.0",
+    "compilerOptions": {
+        "target": "es6",
+        "declaration": false,
+        "noImplicitAny": true,
+        "removeComments": true,
+        "noLib": false
+    },
+    "filesGlob": [
+        "./**/*.ts",
+        "!./node_modules/**/*.ts"
+    ],
+    "files": [
+        "./ScaffoldModule.ts",
+        "./Version.ts",
+        "./controller/IndexController.ts",
+        "./directive/IndexDirective.ts",
+        "./service/ScaffoldHttpService.ts",
+        "./service/ScaffoldService.ts"
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "version": "1.5.0",
+    "compilerOptions": {
+        "target": "es6",
+        "declaration": false,
+        "noImplicitAny": true,
+        "removeComments": true,
+        "noLib": false
+    },
+    "filesGlob": [
+        "./**/*.ts",
+        "!./node_modules/**/*.ts"
+    ],
+    "files": [
+        "./I18NModule.ts",
+        "./Version.ts"
+    ]
+}
