@@ -16,5 +16,4 @@ export class BaseService<T> implements angular.IService<T> {
    */
   constructor() {
   }
-
 }

@@ -1,5 +1,6 @@
 /// <reference path="../../../../library.d.ts" />
 
+import {VERSION,NAME,URL,YEAR} from '../../../../library/Version';
 import {BaseController} from '../../../../library/BaseController';
 
 interface ILanguage {
@@ -40,11 +41,11 @@ export class ToolbarController extends BaseController {
     {code: 'blue', label: 'asts.theme.blue'},
   ];
 
-  version: string = '0.0.1';
+  version: string = VERSION;
 
-  url: string = 'http://github.com/gregoranders/asts';
+  url: string = URL;
 
-  year: number = 2015;
+  year: string = YEAR;
 
   constructor($scope: angular.IScope<ToolbarController>, private $translate: any, private $mdTheming: any) {
     super($scope);

@@ -63,7 +63,7 @@ describe('BaseModule', ():void => {
         factory: () => {
 
         },
-        constant(): () => {
+        constant: () => {
 
         }
       };

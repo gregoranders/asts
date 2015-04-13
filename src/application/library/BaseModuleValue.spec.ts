@@ -60,10 +60,10 @@ describe('BaseModule', ():void => {
     it('should delegate to native', ():void => {
 
       var native:any = {
-        value: () => {
+        constant: () => {
 
         },
-        constant(): () => {
+        value: () => {
 
         }
       };
