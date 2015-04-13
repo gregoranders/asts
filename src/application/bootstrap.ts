@@ -16,14 +16,10 @@ import 'angular-translate-loader-static-files';
 import {I18NModule} from './modules/i18n/I18NModule';
 import {ThemeModule} from './modules/theme/ThemeModule';
 import {ToolbarModule} from './modules/toolbar/ToolbarModule';
-import {AuthenticationModule} from './modules/authentication/AuthenticationModule';
-import {ScaffoldModule} from './modules/scaffold/ScaffoldModule';
 
 new I18NModule('application/modules/i18n');
 new ThemeModule('application/modules/theme');
-new AuthenticationModule('application/modules/authentication');
 new ToolbarModule('application/modules/toolbar');
-new ScaffoldModule();
 
 angular.bootstrap(document, [
   'ngAnimate',
@@ -38,7 +34,5 @@ angular.bootstrap(document, [
   'pascalprecht.translate',
   I18NModule.identifier,
   ThemeModule.identifier,
-  ToolbarModule.identifier,
-  ScaffoldModule.identifier,
-  AuthenticationModule.identifier
+  ToolbarModule.identifier
 ]);

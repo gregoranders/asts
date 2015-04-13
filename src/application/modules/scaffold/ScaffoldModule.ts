@@ -35,7 +35,7 @@ export class ScaffoldModule extends BaseModule {
    *
    * @see https://docs.angularjs.org/guide/module
    */
-  constructor() {
+  constructor(public baseURL: string) {
     super(ScaffoldModule.identifier, ['ngRoute', 'com.web.authentication'], RouteConfiguration);
 
     this.directive(IndexDirective);
