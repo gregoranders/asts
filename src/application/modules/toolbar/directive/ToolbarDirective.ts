@@ -15,6 +15,13 @@ export class ToolbarDirective extends BaseDirective {
 
   controller: any = ToolbarController;
 
+  scope: any = {
+  };
+
+  link: any = (scope: any, element: any, attrs: any, controller: ToolbarController): void => {
+   scope.$parent.vm = controller;
+  };
+
   constructor(component: any) {
     super();
     var baseURL: string = component.baseURL;

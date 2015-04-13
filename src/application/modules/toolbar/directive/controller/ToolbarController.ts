@@ -40,6 +40,12 @@ export class ToolbarController extends BaseController {
     {code: 'blue', label: 'asts.theme.blue'},
   ];
 
+  version: string = '0.0.1';
+
+  url: string = 'http://github.com/gregoranders/asts';
+
+  year: number = 2015;
+
   constructor($scope: angular.IScope<ToolbarController>, private $translate: any, private $mdTheming: any) {
     super($scope);
 

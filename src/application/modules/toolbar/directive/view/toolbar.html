@@ -3,7 +3,13 @@
     <h2>
       <span>Toolbar</span>
     </h2>
-    <div flex></div>
+    <div flex layout="vertical" layout-fill>
+      <nav class="md-toolbar-tools">
+        <md-button href="#/one">One</md-button>
+        <md-button href="#/two">Two</md-button>
+        <md-button href="#/three">Three</md-button>
+      </nav>
+    </div>
     <md-select ng-model="vm.theme">
       <md-select-label>{{ 'asts.theme.theme' | translate }}</md-select-label>
       <md-option ng-value="theme.code" ng-repeat="theme in vm.themes">{{ theme.label | translate }}</md-option>

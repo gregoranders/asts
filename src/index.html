@@ -6,9 +6,7 @@
   <title>ES6</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
-  <!-- Place favicon.ico in the root directory -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,400italic,700" rel="stylesheet"
         type="text/css">
   <link rel="stylesheet" href="vendor/github/angular/bower-material@master/angular-material.min.css">
@@ -27,6 +25,13 @@
 </header>
 
 <div ng-view></div>
+
+<footer class="md-primary">
+  <small>
+    Powered by <a href="{{ vm.url }}">asts</a> <a href="{{ vm.url }}/releases/tag/v{{ vm.version }}">{{ vm.version }}</a> &copy; {{ vm.year }}.
+    Code licensed under the <a href="http://opensource.org/licenses/BSD-3-Clause" class="text-snow">BSD 3-clause "New" or "Revised" License</a>.
+  </small>
+</footer>
 
 <script src="vendor/system.js"></script>
 <script src="config.js"></script>
