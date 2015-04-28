@@ -1,4 +1,5 @@
 /// <reference path="../../library.d.ts" />
+'use strict';
 
 import angular from 'angular';
 import {AuthenticationModule} from "./AuthenticationModule"; AuthenticationModule;

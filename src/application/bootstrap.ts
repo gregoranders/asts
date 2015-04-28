@@ -1,4 +1,5 @@
 /// <reference path="./library.d.ts" />
+'use strict';
 
 import 'angular';
 import 'angular-animate';

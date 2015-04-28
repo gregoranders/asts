@@ -1,3 +1,6 @@
+/// <reference path="../../library.d.ts" />
+'use strict';
+
 import {NAME} from './Version';
 import {BaseModule} from '../../library/BaseModule';
 import {BaseDirective} from '../../library/BaseDirective';

@@ -1,4 +1,5 @@
 /// <reference path="../../../../library.d.ts" />
+'use strict';
 
 import {VERSION,NAME,URL,YEAR} from '../../../../library/Version';
 import {BaseController} from '../../../../library/BaseController';

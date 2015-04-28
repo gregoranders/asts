@@ -1,3 +1,6 @@
+/// <reference path="../../../library.d.ts" />
+'use strict';
+
 import {BaseDirective} from '../../../library/BaseDirective';
 
 export class IndexDirective extends BaseDirective {
