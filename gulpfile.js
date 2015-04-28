@@ -27,6 +27,7 @@ var karma = require('gulp-karma');
 
 var protrac = require('gulp-protractor').protractor;
 
+
 gulp.task('sass', function () {
   return gulp.src(config.source.scss)
     .pipe(sass())
@@ -130,7 +131,7 @@ gulp.task('test:ci', function () {
     });
 });
 
-gulp.task('test:watch', function () {
+gulp.task('test:watch:chrome', function () {
   return gulp.src([])
     .pipe(karma({
       configFile: './karma.conf',
@@ -141,10 +142,10 @@ gulp.task('test:watch', function () {
     });
 });
 
-gulp.task('test:local', function () {
+gulp.task('test:watch:phantomjs2', function () {
   return gulp.src([])
     .pipe(karma({
-      configFile: './karma-local.conf',
+      configFile: './karma-phantomjs2.conf',
       action: 'watch'
     }))
     .on('error', function (err) {

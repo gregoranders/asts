@@ -12,7 +12,9 @@
         "!./node_modules/**/*.ts"
     ],
     "files": [
+        "./AuthenticationModule.spec.ts",
         "./AuthenticationModule.ts",
+        "./Version.spec.ts",
         "./Version.ts",
         "./service/AuthenticationService.ts"
     ]
