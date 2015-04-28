@@ -15,6 +15,11 @@
       "one": "One",
       "two": "Two",
       "three": "Three"
+    },
+    "footer": {
+      "powerdby": "Powered by",
+      "copyright": "Code licensed under the",
+      "license": "BSD 3-clause \"New\" or \"Revised\" License"
     }
   }
 }
