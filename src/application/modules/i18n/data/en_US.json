@@ -10,6 +10,11 @@
       "red": "Red",
       "green": "Green",
       "blue": "Blue"
+    },
+    "navigation": {
+      "one": "One",
+      "two": "Two",
+      "three": "Three"
     }
   }
 }

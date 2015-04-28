@@ -4,14 +4,14 @@ import {BaseModule} from '../../library/BaseModule';
 /**
  * ModuleConfiguration.
  */
-class I18NModuleConfiguration  {
+class I18NModuleConfiguration implements angular.IModuleConfiguration {
 
   static $inject: string[] = [
     NAME,
     '$translateProvider'
   ];
 
-  constructor(private component: any, private $translateProvider: any) {
+  constructor(private component: I18NModule, private $translateProvider: any) {
 
     $translateProvider.useStaticFilesLoader({
       prefix: component.baseURL + '/data/',

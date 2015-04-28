@@ -6,7 +6,7 @@ import {AuthenticationService} from './service/AuthenticationService';
 /**
  * RouteConfiguration.
  */
-class AuthenticationModuleRouteConfiguration {
+class AuthenticationModuleRouteConfiguration implements angular.IModuleConfiguration {
 
   /**
    * @see https://docs.angularjs.org/guide/di

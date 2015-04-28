@@ -7,10 +7,12 @@ declare function it(expectation: string, assertion: () => void): void;
 
 declare function expect(condition: any): any;
 
+declare function inject(params: any): void;
+
 declare var element: any;
 
-declare function before(before: () => void): any;
-declare function beforeEach(before: () => void): any;
+declare function before(before: any): any;
+declare function beforeEach(before: any): any;
 
 interface IProtractorBy {
   css(selector: string): any;

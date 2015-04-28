@@ -26,12 +26,12 @@ module.exports = function (config) {
     ],
 
     plugins: [
-      'karma-systemjs',
       'karma-firefox-launcher',
       'karma-jasmine',
       'karma-traceur-preprocessor',
       'karma-junit-reporter',
-      'karma-coverage-es6'
+      'karma-coverage-es6',
+      'karma-jspm'
     ],
 
     reporters: ['progress', 'coverage'],
@@ -49,17 +49,19 @@ module.exports = function (config) {
       dir: 'test_out/'
     },
 
-    systemjs: {
-      configFile: 'config.js',
-
-      files: [
-        'vendor/*/**/*.js',
-        'application/*.js',
-        'application/**/*.js'
+    jspm: {
+      loadFiles: [
+        'application/modules/**/*.spec.js'
       ],
-      config: {
-        baseURL: '/'
-      }
+      serveFiles: [
+        'vendor/*.js',
+        'vendor/**/*.js',
+        'application/modules/*/**/!(*spec).js',
+        'application/modules/*/!(*spec).js',
+        'application/library/!(*spec).js'
+      ],
+      configFile: 'config.js',
+      packages: 'vendor/'
     },
 
     singleRun: true,
