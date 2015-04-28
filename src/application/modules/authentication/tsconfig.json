@@ -16,6 +16,7 @@
         "./AuthenticationModule.ts",
         "./Version.spec.ts",
         "./Version.ts",
+        "./service/AuthenticationService.spec.ts",
         "./service/AuthenticationService.ts"
     ]
 }
