@@ -1,20 +1,20 @@
 /// <reference path="../../../library.d.ts" />
 'use strict';
 
-import {NAME} from '../Version';
+import {NAME, SERVICE} from '../Version';
 import {BaseHttpService} from '../../../library/BaseHttpService';
 
 export class AuthenticationService extends BaseHttpService<number> {
 
-  static identifier: string = NAME + '.service';
+  static identifier:string = SERVICE;
 
-  static LOGIN_URL: string = '/auth/login';
+  static LOGIN_URL:string = '/auth/login';
 
-  static LOGOUT_URL: string = '/auth/logout';
+  static LOGOUT_URL:string = '/auth/logout';
 
-  login(username: string, password: string): any {
+  login(username:string, password:string):any {
 
-    var req: any = {
+    var req:any = {
       method: 'POST',
       url: AuthenticationService.LOGIN_URL,
       headers: {
@@ -22,10 +22,10 @@ export class AuthenticationService extends BaseHttpService<number> {
       },
       crossDomain: true,
       xhrFields: {withCredentials: true},
-      transformRequest: function(obj:any) {
-        var str: string[] = [];
-        for(var p in obj) {
-          str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
+      transformRequest: function (obj:any) {
+        var str:string[] = [];
+        for (var tmp in obj) {
+          str.push(encodeURIComponent(tmp) + "=" + encodeURIComponent(obj[tmp]));
         }
         return str.join("&");
       },
@@ -35,29 +35,41 @@ export class AuthenticationService extends BaseHttpService<number> {
       }
     };
 
-    this.$http(req).then((response: any): any => {
-      if (response.status !== 200) {
-        return this.$q.reject(response);
-      }
+    var deferred = this.$q.defer();
 
-      return response.data;
-    }).catch( (response: any): void => {
-      return this.$q.reject(response);
-    });
+    this.$http(req)
+      .then((response:any):any => {
+        if (response.status !== 200) {
+          deferred.reject(response);
+        }
+
+        deferred.resolve(response.data);
+      })
+      .catch((response:any):void => {
+        deferred.reject(response);
+      });
+
+    return deferred.promise;
   }
 
-  logout(): void {
+  logout(): any {
 
-    var req: any = {
+    var deferred = this.$q.defer();
+
+    var req:any = {
       method: 'POST',
       url: AuthenticationService.LOGOUT_URL,
       data: {}
     };
 
-    this.$http(req).then((response: any): any => {
-      return response.data;
-    }).catch( (response: any): void => {
-      return this.$q.reject(response);
-    });
+    this.$http(req)
+      .then((response:any):any => {
+        deferred.resolve(response.data);
+      })
+      .catch((response:any):void => {
+        deferred.reject(response);
+      });
+
+    return deferred.promise;
   }
 }

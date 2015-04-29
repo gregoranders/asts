@@ -13,6 +13,7 @@ declare var element: any;
 
 declare function before(before: any): any;
 declare function beforeEach(before: any): any;
+declare function afterEach(before: any): any;
 
 interface IProtractorBy {
   css(selector: string): any;
@@ -244,6 +245,15 @@ declare module angular {
     otherwise(route: IRoute): IRouteProvider;
   }
 
+
+  /**
+   * Angular Q Service.
+   *
+   * @see https://docs.angularjs.org/api/ng/service/$q
+   */
+  interface IQService {
+    defer(): any;
+  }
 }
 
 declare var angular: angular.IAngular;

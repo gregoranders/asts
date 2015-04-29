@@ -4,3 +4,6 @@
 export var VERSION:string = '0.0.1';
 
 export var NAME:string = 'com.web.authentication';
+
+export var SERVICE:string = NAME + '.service';
+

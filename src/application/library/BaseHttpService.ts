@@ -18,7 +18,7 @@ export class BaseHttpService<T> implements angular.IHttpService<T> {
    *
    * @see https://docs.angularjs.org/guide/module
    */
-  constructor(protected $http: any, protected $q: any) {
+  constructor(protected $http: any, protected $q: angular.IQService) {
     if (!$http) {
       throw new Error('Invalid $http provided');
     }
