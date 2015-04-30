@@ -10,20 +10,31 @@ export class LogoutController extends BaseController {
 
   static $inject: string[] = [
     '$scope',
+    '$rootScope',
     SERVICE
   ];
 
   static identifier: string = NAME + '.LogoutController';
 
-  constructor($scope: angular.IScope<BaseController>, private service: IAuthenticationService) {
+  public state: number = 0;
+
+  constructor($scope: angular.IScope<BaseController>,
+              private $rootScope: angular.IScope<BaseController>,
+              private service: IAuthenticationService) {
     super($scope);
+  }
 
+  logout(): void {
     this.service.logout()
-    .then( (data: any): void => {
-
+      .then( (data: any): void => {
+        this.state = 1;
+        this.$rootScope.authenticated = false;
+        this.$rootScope.authenticatedUser = null;
       })
-    .catch( (response: any): void => {
-        console.log(response);
+      .catch( (response: any): void => {
+        this.state = -1;
+        this.$rootScope.authenticated = false;
+        this.$rootScope.authenticatedUser = null;
       });
   }
 }

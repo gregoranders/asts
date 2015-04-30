@@ -34,3 +34,4 @@ angular.bootstrap(document, [
   I18NModule.identifier,
   ToolbarModule.identifier
 ]);
+
