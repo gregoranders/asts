@@ -6,6 +6,9 @@ import {BaseModule} from '../../library/BaseModule';
 
 import {AuthenticationService} from './service/AuthenticationService';
 
+import {LoginController} from './controller/LoginController';
+import {LogoutController} from './controller/LogoutController';
+
 /**
  * RouteConfiguration.
  */
@@ -14,7 +17,7 @@ class AuthenticationModuleRouteConfiguration implements angular.IModuleConfigura
   /**
    * @see https://docs.angularjs.org/guide/di
    */
-  static $inject: string[] = ['$routeProvider', NAME];
+  static $inject:string[] = ['$routeProvider', NAME];
 
   /**
    * RouteConfiguration constructor.
@@ -23,12 +26,16 @@ class AuthenticationModuleRouteConfiguration implements angular.IModuleConfigura
    *
    * @see https://docs.angularjs.org/api/ngRoute/provider/$routeProvider
    */
-  constructor($routeProvider:angular.IRouteProvider, component: AuthenticationModule) {
-    $routeProvider.when('/login', {
-      templateUrl: component.baseURL + '/view/login.html'
-    }).when('/logout', {
-      templateUrl: component.baseURL + '/view/logout.html'
-    });
+  constructor($routeProvider:angular.IRouteProvider, component:AuthenticationModule) {
+    $routeProvider
+      .when('/login', {
+        templateUrl: component.baseURL + '/view/login.html',
+        controller: LoginController
+      })
+      .when('/logout', {
+        templateUrl: component.baseURL + '/view/logout.html',
+        controller: LogoutController
+      });
   }
 }
 
@@ -44,7 +51,7 @@ export class AuthenticationModule extends BaseModule {
    *
    * @see https://docs.angularjs.org/guide/module
    */
-  constructor(public baseURL: string) {
+  constructor(public baseURL:string) {
     super(AuthenticationModule.identifier, ['ngRoute'], AuthenticationModuleRouteConfiguration);
 
     this.service(AuthenticationService);

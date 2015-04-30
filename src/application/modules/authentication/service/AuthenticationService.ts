@@ -4,7 +4,9 @@
 import {NAME, SERVICE} from '../Version';
 import {BaseHttpService} from '../../../library/BaseHttpService';
 
-export class AuthenticationService extends BaseHttpService<number> {
+import {IAuthenticationService} from './IAuthenticationService';
+
+export class AuthenticationService extends BaseHttpService<number> implements IAuthenticationService {
 
   static identifier:string = SERVICE;
 
