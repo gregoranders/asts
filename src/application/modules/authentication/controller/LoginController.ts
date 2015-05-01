@@ -3,7 +3,7 @@
 
 import {NAME,SERVICE} from '../Version';
 import {BaseController} from '../../../library/BaseController';
-
+import {IRootScope} from '../../commons/IRootScope';
 import {IAuthenticationService} from '../service/IAuthenticationService';
 
 export class LoginController extends BaseController {
@@ -23,7 +23,7 @@ export class LoginController extends BaseController {
   public state: number = 0;
 
   constructor($scope: angular.IScope<BaseController>,
-              private $rootScope: angular.IScope<BaseController>,
+              private $rootScope: IRootScope,
               private service: IAuthenticationService) {
     super($scope);
   }

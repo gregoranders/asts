@@ -20,6 +20,11 @@
       "powerdby": "Präsentiert von",
       "copyright": "Code unter der",
       "license": "BSD 3-clause \"New\" oder \"Revised\" Lizenz"
+    },
+    "authentication": {
+      "username": "Benutzername",
+      "password": "Passwort",
+      "login": "Anmelden"
     }
   }
 }

@@ -1,6 +1,19 @@
-<h5>login</h5>
+<h5 class="section--title" translate="asts.authentication.login"></h5>
 
-<input type="text" ng-model="vm.username" \>
-<input type="password" ng-model="vm.password" \>
+<form novalidate class="form--login">
 
-<button ng-click="vm.login()">login</button>
+  <fieldset>
+    <legend translate="asts.authentication.login"></legend>
+
+    <label class="form--label" translate="asts.authentication.username"></label>
+    <input class="form--input" type="text" ng-model="vm.username" required />
+
+    <label class="form--label" translate="asts.authentication.password"></label>
+    <input class="form--input" type="password" ng-model="vm.password" required />
+  </fieldset>
+
+  <div>
+    <button class="form--button" ng-click="vm.login()" translate="asts.authentication.login"></button>
+  </div>
+
+</form>

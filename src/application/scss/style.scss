@@ -11,14 +11,48 @@ body {
   font-size: 14px;
 }
 
-footer {
+.layout--left {
+  float: left;
+}
+
+.layout--clear__both:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.footer {
   text-align: center;
+}
 
-  a {
-    text-decoration: none;
-  }
+.footer--link {
+  text-decoration: none;
+}
 
-  a:hover {
-    text-decoration: underline;
-  }
+.footer--link:hover {
+  text-decoration: underline;
+}
+
+.form--button {
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.form--input {
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+}
+
+label {
+  display: block;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+input.ng-valid.ng-touched {
+  border: 1px solid green;
 }

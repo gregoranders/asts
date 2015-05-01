@@ -83,6 +83,8 @@ declare module angular {
     vm: T;
 
     $watch(expression: string, func: any): void;
+
+    $digest(): void;
   }
 
   /**
@@ -91,6 +93,7 @@ declare module angular {
    * @see https://docs.angularjs.org/guide/controller
    */
   interface IController<T extends IScope<IController<any>>> extends IInject, IIdentifier {
+    [key:string]: any;
   }
 
   /**

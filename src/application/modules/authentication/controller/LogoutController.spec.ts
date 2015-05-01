@@ -1,15 +1,16 @@
-/// <reference path="../../library.d.ts" />
+/// <reference path="../../../library.d.ts" />
 'use strict';
 
 import angular from 'angular';
 import {LogoutController} from "./LogoutController";
+import {IRootScope} from '../../commons/IRootScope';
 import {IAuthenticationService} from "../service/IAuthenticationService";
 import 'angular-mocks';
 
 describe('LogoutController', ():void => {
 
-  var $scope:angular.IScope,
-    $rootScope:angular.IScope,
+  var $scope:angular.IScope<LogoutController>,
+    $rootScope:IRootScope,
     $q:angular.IQService,
     serviceSuccess:IAuthenticationService,
     serviceError:IAuthenticationService;
@@ -19,6 +20,11 @@ describe('LogoutController', ():void => {
     $scope = _$rootScope_.$new();
     $rootScope = _$rootScope_;
     serviceSuccess = {
+      login: (): any => {
+        var defer = $q.defer();
+        defer.resolve({user: 'username'});
+        return defer.promise;
+      },
       logout: ():void => {
         var defer = $q.defer();
         defer.resolve({});
@@ -26,6 +32,11 @@ describe('LogoutController', ():void => {
       }
     };
     serviceError = {
+      login: (): any => {
+        var defer = $q.defer();
+        defer.reject({user: 'username'});
+        return defer.promise;
+      },
       logout: ():void => {
         var defer = $q.defer();
         defer.reject({});
@@ -40,7 +51,7 @@ describe('LogoutController', ():void => {
   });
 
   it('should initialize state to 0', ():void => {
-    var testSubject:LogoutController = new LogoutController($scope, $rootScope, serviceSuccess);
+    new LogoutController($scope, $rootScope, serviceSuccess);
     expect($scope.vm.state).toBe(0);
   });
 
