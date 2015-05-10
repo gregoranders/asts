@@ -9,9 +9,9 @@ import 'angular-mocks';
 
 describe('AuthenticationService', (): void => {
 
-  var $httpBackend: any, $http: any, $q: any;
+  var $httpBackend: any, $http: angular.IHttpService<any>, $q: angular.IQService;
 
-  beforeEach( inject((_$httpBackend_:any, _$http_:any, _$q_:any): void => {
+  beforeEach( inject((_$httpBackend_:any, _$http_:angular.IHttpService<any>, _$q_:angular.IQService): void => {
     $httpBackend = _$httpBackend_;
     $http = _$http_;
     $q = _$q_;
