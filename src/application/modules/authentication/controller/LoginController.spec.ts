@@ -1,7 +1,7 @@
 /// <reference path="../../../library.d.ts" />
 'use strict';
 
-import angular from 'angular';
+import {angular} from 'angular';
 import {LoginController} from "./LoginController";
 import {IRootScope} from '../../commons/IRootScope';
 import {IAuthenticationService} from "../service/IAuthenticationService";
@@ -15,9 +15,9 @@ describe('LoginController', ():void => {
     serviceSuccess:IAuthenticationService,
     serviceError:IAuthenticationService;
 
-  beforeEach(inject((_$q_, _$rootScope_):void => {
+  beforeEach(inject((_$q_: angular.IQService, _$rootScope_: IRootScope):void => {
     $q = _$q_;
-    $scope = _$rootScope_.$new();
+    $scope = <angular.IScope<LoginController>>_$rootScope_.$new();
     $rootScope = _$rootScope_;
     serviceSuccess = {
       login: (): any => {

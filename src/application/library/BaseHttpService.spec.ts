@@ -7,13 +7,13 @@ describe('BaseHttpService', ():void => {
 
   it('should throw Error on null $http', ():void => {
     expect(():void => {
-      new BaseHttpService(null, {})
+      new BaseHttpService(null, <angular.IQService>{})
     }).toThrow(new Error('Invalid $http provided'));
   });
 
   it('should throw Error on null $q', ():void => {
     expect(():void => {
-      new BaseHttpService({}, null)
+      new BaseHttpService(<angular.IHttpService<any>>{}, null)
     }).toThrow(new Error('Invalid $q provided'));
   });
 

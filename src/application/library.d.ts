@@ -30,6 +30,10 @@ declare module jasmine {
   function any(expression: any): any;
 }
 
+declare module 'angular' {
+  var angular: angular.IAngular;
+}
+
 /**
  * AngularJS.
  *
@@ -85,6 +89,8 @@ declare module angular {
     $watch(expression: string, func: any): void;
 
     $digest(): void;
+
+    $new(): IScope<T>;
   }
 
   /**
@@ -93,7 +99,7 @@ declare module angular {
    * @see https://docs.angularjs.org/guide/controller
    */
   interface IController<T extends IScope<IController<any>>> extends IInject, IIdentifier {
-    [key:string]: any;
+
   }
 
   /**
@@ -210,7 +216,7 @@ declare module angular {
     /**
      * @see https://docs.angularjs.org/api/ng/function/angular.module
      */
-    module(name: string, dependencies: string[], configuration?: any): IModule;
+    module(name: string, dependencies?: string[], configuration?: any): IModule;
 
     /**
      * @see https://docs.angularjs.org/api/ng/function/angular.bootstrap

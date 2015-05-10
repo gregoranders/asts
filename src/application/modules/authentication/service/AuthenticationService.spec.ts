@@ -1,8 +1,8 @@
 /// <reference path="../../../library.d.ts" />
 'use strict';
 
-import angular from 'angular'; angular;
-import {AuthenticationService} from "./AuthenticationService"; AuthenticationService;
+import 'angular';
+import {AuthenticationService} from "./AuthenticationService";
 import 'angular-mocks';
 
 'use strict';
